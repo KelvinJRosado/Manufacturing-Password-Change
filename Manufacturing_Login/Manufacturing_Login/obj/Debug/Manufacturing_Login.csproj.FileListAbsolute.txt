@@ -1,0 +1,11 @@
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\bin\Debug\Manufacturing_Login.exe.config
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\bin\Debug\Manufacturing_Login.exe
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\bin\Debug\Manufacturing_Login.pdb
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.csprojResolveAssemblyReference.cache
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.ManForm.resources
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.PassForm.resources
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.Properties.Resources.resources
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.csproj.GenerateResource.Cache
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.csproj.CoreCompileInputs.cache
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.exe
+C:\Users\flynt_000\source\repos\Manufacturing_Login\Manufacturing_Login\obj\Debug\Manufacturing_Login.pdb
