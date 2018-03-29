@@ -16,7 +16,7 @@ namespace Manufacturing_Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManForm());
+            Application.Run(new LoginForm());
         }
     }
 }
