@@ -1,0 +1,121 @@
+USE master;
+GO
+
+IF exists (SELECT * FROM sysdatabases WHERE name='Production')
+BEGIN
+  raiserror('Dropping existing Production database ....',0,1)
+  DROP DATABASE Production
+END
+
+CREATE DATABASE Production
+GO
+
+USE Production;
+
+CREATE TABLE [DEPARTMENT]
+( 
+	[DepartmentID]       integer  NOT NULL  IDENTITY ( 1,1 ) ,
+	[DepartmentName]     varchar(100)  NOT NULL ,
+	[DepartmentHead]     varchar(100)  NOT NULL ,
+	[DateModified]       datetime  NOT NULL 
+	CONSTRAINT [Default_Value_174_1402703423]
+		 DEFAULT  (SYSDATETIME())
+)
+go
+
+ALTER TABLE [DEPARTMENT]
+	ADD CONSTRAINT [XPKDEPARTMENT] PRIMARY KEY  CLUSTERED ([DepartmentID] ASC)
+go
+
+INSERT INTO [DEPARTMENT] ([DepartmentName], [DepartmentHead] ) VALUES
+('DeptAlpha',	'John Smith'),
+('DeptBeta',	'Sheri Brown'),
+('DeptCharlie',	'Ken Johnson'),
+('DeptDelta',	'John Moore'),
+('DeptEcho',	'Ken Smith');
+go
+
+
+CREATE TABLE [EMPLOYEE]
+( 
+	[EmployeeID]         integer  NOT NULL  IDENTITY ( 1,1 ) ,
+	[EmployeeName]       varchar(100)  NOT NULL ,
+	[DepartmentID]       integer  NOT NULL ,
+	[DateModified]       datetime  NOT NULL 
+	CONSTRAINT [Default_Value_183_1934373685]
+		 DEFAULT  (SYSDATETIME())
+)
+go
+
+ALTER TABLE [EMPLOYEE]
+	ADD CONSTRAINT [XPKEMPLOYEE] PRIMARY KEY  CLUSTERED ([EmployeeID] ASC)
+go
+
+INSERT INTO [EMPLOYEE] ([EmployeeName], [DepartmentID] ) VALUES
+('Bob One', 1),
+('Sam Two', 2),
+('Steve Three', 3 ),
+('David Four', 4),
+('Bill Five', 5),
+('John Six', 1 ),
+('Jim Seven', 2),
+('Ed Eight', 3),
+('Nancy Nine', 4 ),
+('Ashley Ten', 5);
+go
+
+
+CREATE TABLE [PASSWORD]
+( 
+	[PasswordID]         integer  NOT NULL  IDENTITY ( 1,1 ) ,
+	[Password]           nvarchar(100)  NOT NULL ,
+	[PasswordSalt]       nvarchar(100)  NOT NULL ,
+	[PasswordHash]       nvarchar(100)  NOT NULL 
+)
+go
+
+ALTER TABLE [PASSWORD]
+	ADD CONSTRAINT [XPKPASSWORD] PRIMARY KEY  CLUSTERED ([PasswordID] ASC)
+go
+
+INSERT INTO [PASSWORD] ([Password], [PasswordSalt], [PasswordHash] ) VALUES
+('password1', 'ksnfoowfnnslfjow30smdow03', 'invowo32'),
+('password2', '93nfowuti33ifhie9rnov939h', 'oieif'),
+('password3', 'nf93ubgj3i84btir983bi3fvv', 'i3jfi3bcvdi'),
+('password4', 't8ls954jh3k5jo5pzdzujd6sf', 'kjhgjklvh'),
+('password5', '0x2kopn4mvuxd0nst1m4d74sw', 'ghk6r64'),
+('password6', 'txz18p04kqg6wm9lusarsqk2c', 'jtgdyu41'),
+('password7', 'tnkpjemaqg6hospr9c585s6na', '54ljuhgbv'),
+('password8', '075irro29mi6nywedu9yhdt3d', '5f5ggtfg');
+go
+
+
+CREATE TABLE [EMPLOYEE_ACCOUNT]
+( 
+	[EmployeeID]         integer  NOT NULL ,
+	[Username]           nvarchar(100)  NOT NULL ,
+	[Email]              nvarchar(100)  NOT NULL ,
+	[PasswordID]         integer  NOT NULL ,
+	[StatusRights]       varchar(10)  NOT NULL ,
+	[DateModified]       datetime  NOT NULL 
+	CONSTRAINT [Default_Value_202_165593827]
+		 DEFAULT  (SYSDATETIME())
+)
+go
+
+ALTER TABLE [EMPLOYEE_ACCOUNT]
+	ADD CONSTRAINT [XPKEMPLOYEE_ACCOUNT] PRIMARY KEY  CLUSTERED ([EmployeeID] ASC)
+go
+
+INSERT INTO [EMPLOYEE_ACCOUNT] ([EmployeeID], [Username], [Email], [PasswordID], [StatusRights] ) VALUES
+(1, 'BobOne@company', 'BobOne@company.gmail.com', 1, 'Admin'),
+(2, 'SamTwo@company', 'SamTwo@company.gmail.com', 2, 'Edit'),
+(3, 'SteveThree@company', 'SteveThree@company.gmail.com', 3, 'View'),
+(4, 'DavidFour@company', 'DavidFour@company.gmail.com', 4, 'View'),
+(5, 'BillFive@company', 'BillFive@company.gmail.com', 5, 'View'),
+(6, 'JohnSix@company', 'JohnSix@company.gmail.com', 6, 'View'),
+(7, 'JimSeven@company', 'JimSeven@company.gmail.com', 7, 'View'),
+(8, 'EdEight@company', 'bEdEight@company.gmail.com', 8, 'Edit');
+go
+
+
