@@ -102,6 +102,55 @@ CREATE TABLE [EMPLOYEE_ACCOUNT]
 		 DEFAULT  (SYSDATETIME())
 )
 go
+CREATE TABLE [PRODUCT]
+( 
+	[ProductNumber]      nvarchar(100)  NOT NULL ,
+	[Name]               varchar(100)  NOT NULL ,
+	[ModelCode]          nvarchar(100)  NOT NULL ,
+	[DaysToProduce]      integer  NOT NULL ,
+	[CostToProduce]      money  NOT NULL ,
+	[StartSellDate]      datetime  NOT NULL ,
+	[EndSellDate]        datetime  NULL ,
+	[DiscountinuedDate]  datetime  NULL ,
+	[DateModified]       datetime  NOT NULL 
+	CONSTRAINT [Default_Value_248_1917665514]
+		 DEFAULT  (SYSDATETIME())
+)
+go
+ALTER TABLE [PRODUCT]
+	ADD CONSTRAINT [XPKPRODUCT] PRIMARY KEY  CLUSTERED ([ProductNumber] ASC)
+go
+
+INSERT INTO [PRODUCT] ([ProductNumber], [Name], [ModelCode], [DaysToProduce], [CostToProduce], [StartSellDate], [EndSellDate], [DiscountinuedDate] ) VALUES
+('AR-5381', 'CE offtek 4GB PC3-12800, 'MC-1000', 5, 100.00, '2008-04-30 00:00:00.000', NULL, NULL);
+go
+
+CREATE TABLE [PRODUCT_ARCHIVE]
+( 
+	[ArchiveID]          integer  NOT NULL  IDENTITY ( 1,1 ) ,
+	[ProductNumber]      nvarchar(100)  NOT NULL ,
+	[Name]               char(18)  NULL ,
+	[DaysToProduce]      char(18)  NULL ,
+	[CostToProduce]		 char(18)  NULL ,
+	[StartSellDate]      char(18)  NULL ,
+	[EndSellDate]        char(18)  NULL ,
+	[ArchiveDate]        datetime  NULL ,
+	[DiscountinuedDate]  char(18)  NULL ,
+	[DateModified]       datetime  NOT NULL 
+	CONSTRAINT [Default_Value_295_50999666]
+		 DEFAULT  (SYSDATETIME())
+)
+go
+
+ALTER TABLE [PRODUCT_ARCHIVE]
+	ADD CONSTRAINT [XPKPRODUCT_ARCHIVE] PRIMARY KEY  CLUSTERED ([ArchiveID] ASC)
+go
+
+
+INSERT INTO [PRODUCT_ARCHIVE] ([ProductNumber],[Name], [DaysToProduce], [CostToProduce], [StartSellDate], [EndSellDate], [ArchiveDate], [DiscountinuedDate] ) VALUES
+('EC-T209', 'ASUS Motherboard', 5, 5.00, '2008-04-30', NULL, NULL, '2008-09-30'),
+('FE-3760', 'Hard Fork', 4, 30.00, '2008-04-30', '2009-04-30', NULL, NULL);
+go
 
 ALTER TABLE [EMPLOYEE_ACCOUNT]
 	ADD CONSTRAINT [XPKEMPLOYEE_ACCOUNT] PRIMARY KEY  CLUSTERED ([EmployeeID] ASC)
@@ -116,6 +165,31 @@ INSERT INTO [EMPLOYEE_ACCOUNT] ([EmployeeID], [Username], [Email], [PasswordID],
 (6, 'JohnSix@company', 'JohnSix@company.gmail.com', 6, 'View'),
 (7, 'JimSeven@company', 'JimSeven@company.gmail.com', 7, 'View'),
 (8, 'EdEight@company', 'bEdEight@company.gmail.com', 8, 'Edit');
+go
+
+ALTER TABLE [EMPLOYEE]
+	ADD CONSTRAINT [R_23] FOREIGN KEY ([DepartmentID]) REFERENCES [DEPARTMENT]([DepartmentID])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+
+ALTER TABLE [EMPLOYEE_ACCOUNT]
+	ADD CONSTRAINT [R_24] FOREIGN KEY ([EmployeeID]) REFERENCES [EMPLOYEE]([EmployeeID])
+		ON DELETE CASCADE
+		ON UPDATE NO ACTION
+go
+
+ALTER TABLE [EMPLOYEE_ACCOUNT]
+	ADD CONSTRAINT [R_29] FOREIGN KEY ([PasswordID]) REFERENCES [PASSWORD]([PasswordID])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+
+ALTER TABLE [PRODUCT]
+	ADD CONSTRAINT [R_22] FOREIGN KEY ([ModelCode]) REFERENCES [MODEL_SPECS]([ModelCode])
+		ON UPDATE NO ACTION
 go
 
 
