@@ -106,7 +106,6 @@ CREATE TABLE [PRODUCT]
 ( 
 	[ProductNumber]      nvarchar(100)  NOT NULL ,
 	[Name]               varchar(100)  NOT NULL ,
-	[ModelCode]          nvarchar(100)  NOT NULL ,
 	[DaysToProduce]      integer  NOT NULL ,
 	[CostToProduce]      money  NOT NULL ,
 	[StartSellDate]      datetime  NOT NULL ,
@@ -121,7 +120,7 @@ ALTER TABLE [PRODUCT]
 	ADD CONSTRAINT [XPKPRODUCT] PRIMARY KEY  CLUSTERED ([ProductNumber] ASC)
 go
 
-INSERT INTO [PRODUCT] ([ProductNumber], [Name], [ModelCode], [DaysToProduce], [CostToProduce], [StartSellDate], [EndSellDate], [DiscountinuedDate] ) VALUES
+INSERT INTO [PRODUCT] ([ProductNumber], [Name], [DaysToProduce], [CostToProduce], [StartSellDate], [EndSellDate], [DiscountinuedDate] ) VALUES
 ('AR-5381', 'CE offtek 4GB PC3-12800, 'MC-1000', 5, 100.00, '2008-04-30 00:00:00.000', NULL, NULL);
 go
 
@@ -183,12 +182,6 @@ go
 ALTER TABLE [EMPLOYEE_ACCOUNT]
 	ADD CONSTRAINT [R_29] FOREIGN KEY ([PasswordID]) REFERENCES [PASSWORD]([PasswordID])
 		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
-go
-
-
-ALTER TABLE [PRODUCT]
-	ADD CONSTRAINT [R_22] FOREIGN KEY ([ModelCode]) REFERENCES [MODEL_SPECS]([ModelCode])
 		ON UPDATE NO ACTION
 go
 
