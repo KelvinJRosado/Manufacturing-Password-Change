@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Manufacturing_Login
+namespace Manufacturing_Password_Change_master
 {
     public partial class ErrorForm : Form
     {

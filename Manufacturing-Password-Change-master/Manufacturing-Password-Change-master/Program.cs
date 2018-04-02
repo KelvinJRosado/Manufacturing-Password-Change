@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
-namespace Manufacturing_Login
+namespace Manufacturing_Password_Change_master
+
 {
-    static class Program
+	static class Program
     {
         /// <summary>
         /// The main entry point for the application.

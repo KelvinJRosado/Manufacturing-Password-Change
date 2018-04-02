@@ -1,4 +1,4 @@
-﻿namespace Manufacturing_Login
+﻿namespace Manufacturing_Password_Change_master
 {
     partial class CompleteForm
     {

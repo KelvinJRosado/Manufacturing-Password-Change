@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
-namespace Manufacturing_Login
+namespace Manufacturing_Password_Change_master
 {
     public partial class LoginForm : Form
     {
@@ -30,6 +30,7 @@ namespace Manufacturing_Login
 
             //call the password hashing functions
             PasswordHash passHash = new PasswordHash();
+			DatabaseConnection connection = new DatabaseConnection();
             password = PassText.Text;
             hash = PasswordHash.CreateHash(password);
             bool validPass = PasswordHash.ValidatePassword(password, hash);
