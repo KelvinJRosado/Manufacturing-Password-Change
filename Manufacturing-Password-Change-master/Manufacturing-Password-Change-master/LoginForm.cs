@@ -17,6 +17,7 @@ namespace Manufacturing_Password_Change_master
         PassForm pForm;
         CompleteForm cForm;
         ErrorForm eForm;
+		DatabaseConnection databaseConnection;
 
         //password will be the password input from the C# form
         public static string password;
