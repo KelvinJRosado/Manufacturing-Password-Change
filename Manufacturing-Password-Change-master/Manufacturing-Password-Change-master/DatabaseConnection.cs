@@ -55,6 +55,24 @@ namespace Manufacturing_Password_Change_master
 			}
 		}
 
+		public void InsertUpdateQuery(String query)
+		{
+
+			SqlCommand command = new SqlCommand(query, connection);
+
+			try
+			{
+				connection.Open();
+				command.ExecuteNonQuery();
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine(e.ToString());
+				return;
+			}
+
+		}
+
 		//Prints the result of a query to the console; Debug Only
 		public void PrintQueryResult(List<String[]> result)
 		{
