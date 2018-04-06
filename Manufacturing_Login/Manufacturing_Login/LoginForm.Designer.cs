@@ -28,110 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.LoginLabel = new System.Windows.Forms.Label();
-            this.PassLabel = new System.Windows.Forms.Label();
-            this.MACLabel = new System.Windows.Forms.Label();
-            this.LoginTxt = new System.Windows.Forms.TextBox();
-            this.PassText = new System.Windows.Forms.TextBox();
-            this.MACTest = new System.Windows.Forms.TextBox();
-            this.LoginBtn = new System.Windows.Forms.Button();
-            this.ResetBtn = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
-            // 
-            // LoginLabel
-            // 
-            this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginLabel.Location = new System.Drawing.Point(104, 26);
-            this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(57, 24);
-            this.LoginLabel.TabIndex = 0;
-            this.LoginLabel.Text = "Login";
-            // 
-            // PassLabel
-            // 
-            this.PassLabel.AutoSize = true;
-            this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassLabel.Location = new System.Drawing.Point(104, 90);
-            this.PassLabel.Name = "PassLabel";
-            this.PassLabel.Size = new System.Drawing.Size(92, 24);
-            this.PassLabel.TabIndex = 1;
-            this.PassLabel.Text = "Password";
-            // 
-            // MACLabel
-            // 
-            this.MACLabel.AutoSize = true;
-            this.MACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MACLabel.Location = new System.Drawing.Point(104, 161);
-            this.MACLabel.Name = "MACLabel";
-            this.MACLabel.Size = new System.Drawing.Size(127, 24);
-            this.MACLabel.TabIndex = 2;
-            this.MACLabel.Text = "MAC Address";
-            // 
-            // LoginTxt
-            // 
-            this.LoginTxt.Location = new System.Drawing.Point(108, 53);
-            this.LoginTxt.Name = "LoginTxt";
-            this.LoginTxt.Size = new System.Drawing.Size(251, 20);
-            this.LoginTxt.TabIndex = 3;
-            // 
-            // PassText
-            // 
-            this.PassText.Location = new System.Drawing.Point(108, 117);
-            this.PassText.Name = "PassText";
-            this.PassText.Size = new System.Drawing.Size(251, 20);
-            this.PassText.TabIndex = 4;
-            // 
-            // MACTest
-            // 
-            this.MACTest.Location = new System.Drawing.Point(108, 188);
-            this.MACTest.Name = "MACTest";
-            this.MACTest.Size = new System.Drawing.Size(251, 20);
-            this.MACTest.TabIndex = 5;
-            // 
-            // LoginBtn
-            // 
-            this.LoginBtn.Location = new System.Drawing.Point(108, 265);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(75, 23);
-            this.LoginBtn.TabIndex = 6;
-            this.LoginBtn.Text = "Login";
-            this.LoginBtn.UseVisualStyleBackColor = true;
-            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
-            // 
-            // ResetBtn
-            // 
-            this.ResetBtn.Location = new System.Drawing.Point(237, 265);
-            this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(122, 23);
-            this.ResetBtn.TabIndex = 7;
-            this.ResetBtn.Text = "Reset Password";
-            this.ResetBtn.UseVisualStyleBackColor = true;
-            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // LoginFormcs
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 312);
-            this.Controls.Add(this.ResetBtn);
-            this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.MACTest);
-            this.Controls.Add(this.PassText);
-            this.Controls.Add(this.LoginTxt);
-            this.Controls.Add(this.MACLabel);
-            this.Controls.Add(this.PassLabel);
-            this.Controls.Add(this.LoginLabel);
-            this.Name = "LoginFormcs";
-            this.Text = "Manufacturing Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.components = new System.ComponentModel.Container();
+			this.LoginLabel = new System.Windows.Forms.Label();
+			this.PassLabel = new System.Windows.Forms.Label();
+			this.MACLabel = new System.Windows.Forms.Label();
+			this.LoginTxt = new System.Windows.Forms.TextBox();
+			this.PassText = new System.Windows.Forms.TextBox();
+			this.MACTest = new System.Windows.Forms.TextBox();
+			this.LoginBtn = new System.Windows.Forms.Button();
+			this.ResetBtn = new System.Windows.Forms.Button();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.SuspendLayout();
+			// 
+			// LoginLabel
+			// 
+			this.LoginLabel.AutoSize = true;
+			this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LoginLabel.Location = new System.Drawing.Point(104, 26);
+			this.LoginLabel.Name = "LoginLabel";
+			this.LoginLabel.Size = new System.Drawing.Size(57, 24);
+			this.LoginLabel.TabIndex = 0;
+			this.LoginLabel.Text = "Login";
+			// 
+			// PassLabel
+			// 
+			this.PassLabel.AutoSize = true;
+			this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PassLabel.Location = new System.Drawing.Point(104, 90);
+			this.PassLabel.Name = "PassLabel";
+			this.PassLabel.Size = new System.Drawing.Size(92, 24);
+			this.PassLabel.TabIndex = 1;
+			this.PassLabel.Text = "Password";
+			// 
+			// MACLabel
+			// 
+			this.MACLabel.AutoSize = true;
+			this.MACLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.MACLabel.Location = new System.Drawing.Point(104, 161);
+			this.MACLabel.Name = "MACLabel";
+			this.MACLabel.Size = new System.Drawing.Size(114, 24);
+			this.MACLabel.TabIndex = 2;
+			this.MACLabel.Text = "MC Address";
+			// 
+			// LoginTxt
+			// 
+			this.LoginTxt.Location = new System.Drawing.Point(108, 53);
+			this.LoginTxt.Name = "LoginTxt";
+			this.LoginTxt.Size = new System.Drawing.Size(251, 20);
+			this.LoginTxt.TabIndex = 3;
+			// 
+			// PassText
+			// 
+			this.PassText.Location = new System.Drawing.Point(108, 117);
+			this.PassText.Name = "PassText";
+			this.PassText.Size = new System.Drawing.Size(251, 20);
+			this.PassText.TabIndex = 4;
+			// 
+			// MACTest
+			// 
+			this.MACTest.Location = new System.Drawing.Point(108, 188);
+			this.MACTest.Name = "MACTest";
+			this.MACTest.ReadOnly = true;
+			this.MACTest.Size = new System.Drawing.Size(251, 20);
+			this.MACTest.TabIndex = 5;
+			// 
+			// LoginBtn
+			// 
+			this.LoginBtn.Location = new System.Drawing.Point(108, 265);
+			this.LoginBtn.Name = "LoginBtn";
+			this.LoginBtn.Size = new System.Drawing.Size(75, 23);
+			this.LoginBtn.TabIndex = 6;
+			this.LoginBtn.Text = "Login";
+			this.LoginBtn.UseVisualStyleBackColor = true;
+			this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+			// 
+			// ResetBtn
+			// 
+			this.ResetBtn.Location = new System.Drawing.Point(237, 265);
+			this.ResetBtn.Name = "ResetBtn";
+			this.ResetBtn.Size = new System.Drawing.Size(122, 23);
+			this.ResetBtn.TabIndex = 7;
+			this.ResetBtn.Text = "Reset Password";
+			this.ResetBtn.UseVisualStyleBackColor = true;
+			this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
+			// 
+			// timer1
+			// 
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// LoginForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(502, 312);
+			this.Controls.Add(this.ResetBtn);
+			this.Controls.Add(this.LoginBtn);
+			this.Controls.Add(this.MACTest);
+			this.Controls.Add(this.PassText);
+			this.Controls.Add(this.LoginTxt);
+			this.Controls.Add(this.MACLabel);
+			this.Controls.Add(this.PassLabel);
+			this.Controls.Add(this.LoginLabel);
+			this.Name = "LoginForm";
+			this.Text = "Manufacturing Login";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 

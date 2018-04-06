@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Net.NetworkInformation;
 
 namespace Manufacturing_Password_Change_master
 {
@@ -32,7 +33,7 @@ namespace Manufacturing_Password_Change_master
             //call the password hashing functions
             PasswordHash passHash = new PasswordHash();
 			DatabaseConnection connection = new DatabaseConnection();
-            password = PassText.Text;
+			password = PassText.Text;
             hash = PasswordHash.CreateHash(password);
             bool validPass = PasswordHash.ValidatePassword(password, hash);
             
@@ -104,5 +105,32 @@ namespace Manufacturing_Password_Change_master
         {
 
         }
+
+		private String getMacFormatted()
+		{
+			//Get raw MAC address
+			String mac = NetworkInterface.GetAllNetworkInterfaces()
+			.Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+			.Select(nic => nic.GetPhysicalAddress().ToString())
+			.FirstOrDefault();
+
+			//Put MAC address in proper format
+			String macFormat = "";
+			for(int i = 0; i < mac.Length; i++)
+			{
+				if(i % 2 == 0)
+				{
+					macFormat += mac[i];
+				}
+				else
+				{
+					macFormat += mac[i] + "-";
+				}
+			}
+			macFormat = macFormat.Substring(0, macFormat.Length - 1);
+
+			return macFormat;
+
+		}
     }
 }

@@ -18,8 +18,6 @@ namespace Manufacturing_Password_Change_master
 				+ "user id=Android; password=password;"
 				+ "database=Manufacturing");
 
-			PrintQueryResult(SelectQuery("SELECT * FROM Employee;"));
-
 		}
 
 		//Executes a select query and returns a list filled with arrays of columns
